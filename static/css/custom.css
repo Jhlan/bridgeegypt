@@ -1,0 +1,321 @@
+
+@font-face{
+	font-family: K2D;
+	src: url(../fonts/K2D/K2D-Regular.ttf)
+}
+
+body {
+		width: 100%;
+		height: 100%;
+
+
+		font-family: K2D, helvetica, arial, sans-serif;
+
+		/*font-size: 13px;*/
+
+		background: #333 url(../main/images/background.png) no-repeat center center fixed;
+		opacity: .98;
+		background-size: cover;
+	}
+
+
+
+	.navbar.bg-color{
+
+		background: #0f8304e0 !important;
+
+	}
+
+
+.main-menu > li.dropdown > div > a{
+	background-color: rgb(213, 247, 255);
+	color:rgb(0, 39, 8);
+	font-size: 16px !important;
+	z-index: 1100;
+	margin-bottom: -2px !important;
+	border-radius: 4px;
+}
+
+
+.main-content{
+	min-height:500px;
+	margin-top: 10px;
+}
+
+
+
+
+
+
+/* Style the submit button */
+form.search button {
+	float: left;
+	width: 20%;
+	/* padding: 10px; */
+
+	 background-color: transparent;
+
+	color: white;
+	font-size: 17px;
+	border: 0px ;
+	border-left: none;
+	cursor: pointer;
+}
+
+
+/* Clear floats */
+form.search::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+/* custom bootstrap  */
+
+.dropdown-menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    z-index: 1000;
+    display: none;
+    float: left;
+    min-width: 10rem;
+    padding: 0 0;
+   	margin: 0 0 0;
+    font-size: 1rem;
+    color: #212529;
+    text-align: left;
+    background-color: transparent;
+    border: 0px solid rgba(0,0,0,.15) !important;
+    border-radius: 0 !important;
+}
+
+
+
+.col, .col-1, .col-10, .col-11, .col-12, .col-2, .col-3, .col-4, .col-5, .col-6, .col-7, .col-8, .col-9, .col-auto, .col-lg, .col-lg-1, .col-lg-10, .col-lg-11, .col-lg-12, .col-lg-2, .col-lg-3, .col-lg-4, .col-lg-5, .col-lg-6, .col-lg-7, .col-lg-8, .col-lg-9, .col-lg-auto, .col-md, .col-md-1, .col-md-10, .col-md-11, .col-md-12, .col-md-2, .col-md-3, .col-md-4, .col-md-5, .col-md-6, .col-md-7, .col-md-8, .col-md-9, .col-md-auto, .col-sm, .col-sm-1, .col-sm-10, .col-sm-11, .col-sm-12, .col-sm-2, .col-sm-3, .col-sm-4, .col-sm-5, .col-sm-6, .col-sm-7, .col-sm-8, .col-sm-9, .col-sm-auto, .col-xl, .col-xl-1, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-auto {
+    position: relative;
+    width: 100%;
+    min-height: 1px;
+    padding-right: 10px;
+	padding-left: 10px;
+}
+
+
+
+.card-footer, .card-header {
+    padding: .75rem 1.25rem;
+	background-color: rgba(0,0,0,.0);
+
+}
+
+
+
+
+.col-xs-offset-right-12 {
+	margin-right: 100%;
+  }
+  .col-xs-offset-right-11 {
+	margin-right: 91.66666667%;
+  }
+  .col-xs-offset-right-10 {
+	margin-right: 83.33333333%;
+  }
+  .col-xs-offset-right-9 {
+	margin-right: 75%;
+  }
+  .col-xs-offset-right-8 {
+	margin-right: 66.66666667%;
+  }
+  .col-xs-offset-right-7 {
+	margin-right: 58.33333333%;
+  }
+  .col-xs-offset-right-6 {
+	margin-right: 50%;
+  }
+  .col-xs-offset-right-5 {
+	margin-right: 41.66666667%;
+  }
+  .col-xs-offset-right-4 {
+	margin-right: 33.33333333%;
+  }
+  .col-xs-offset-right-3 {
+	margin-right: 25%;
+  }
+  .col-xs-offset-right-2 {
+	margin-right: 16.66666667%;
+  }
+  .col-xs-offset-right-1 {
+	margin-right: 8.33333333%;
+  }
+  .col-xs-offset-right-0 {
+	margin-right: 0;
+  }
+  @media (min-width: 768px) {
+	.col-sm-offset-right-12 {
+	  margin-right: 100%;
+	}
+	.col-sm-offset-right-11 {
+	  margin-right: 91.66666667%;
+	}
+	.col-sm-offset-right-10 {
+	  margin-right: 83.33333333%;
+	}
+	.col-sm-offset-right-9 {
+	  margin-right: 75%;
+	}
+	.col-sm-offset-right-8 {
+	  margin-right: 66.66666667%;
+	}
+	.col-sm-offset-right-7 {
+	  margin-right: 58.33333333%;
+	}
+	.col-sm-offset-right-6 {
+	  margin-right: 50%;
+	}
+	.col-sm-offset-right-5 {
+	  margin-right: 41.66666667%;
+	}
+	.col-sm-offset-right-4 {
+	  margin-right: 33.33333333%;
+	}
+	.col-sm-offset-right-3 {
+	  margin-right: 25%;
+	}
+	.col-sm-offset-right-2 {
+	  margin-right: 16.66666667%;
+	}
+	.col-sm-offset-right-1 {
+	  margin-right: 8.33333333%;
+	}
+	.col-sm-offset-right-0 {
+	  margin-right: 0;
+	}
+  }
+  @media (min-width: 992px) {
+	.col-md-offset-right-12 {
+	  margin-right: 100%;
+	}
+	.col-md-offset-right-11 {
+	  margin-right: 91.66666667%;
+	}
+	.col-md-offset-right-10 {
+	  margin-right: 83.33333333%;
+	}
+	.col-md-offset-right-9 {
+	  margin-right: 75%;
+	}
+	.col-md-offset-right-8 {
+	  margin-right: 66.66666667%;
+	}
+	.col-md-offset-right-7 {
+	  margin-right: 58.33333333%;
+	}
+	.col-md-offset-right-6 {
+	  margin-right: 50%;
+	}
+	.col-md-offset-right-5 {
+	  margin-right: 41.66666667%;
+	}
+	.col-md-offset-right-4 {
+	  margin-right: 33.33333333%;
+	}
+	.col-md-offset-right-3 {
+	  margin-right: 25%;
+	}
+	.col-md-offset-right-2 {
+	  margin-right: 16.66666667%;
+	}
+	.col-md-offset-right-1 {
+	  margin-right: 8.33333333%;
+	}
+	.col-md-offset-right-0 {
+	  margin-right: 0;
+	}
+  }
+  @media (min-width: 1200px) {
+	.col-lg-offset-right-12 {
+	  margin-right: 100%;
+	}
+	.col-lg-offset-right-11 {
+	  margin-right: 91.66666667%;
+	}
+	.col-lg-offset-right-10 {
+	  margin-right: 83.33333333%;
+	}
+	.col-lg-offset-right-9 {
+	  margin-right: 75%;
+	}
+	.col-lg-offset-right-8 {
+	  margin-right: 66.66666667%;
+	}
+	.col-lg-offset-right-7 {
+	  margin-right: 58.33333333%;
+	}
+	.col-lg-offset-right-6 {
+	  margin-right: 50%;
+	}
+	.col-lg-offset-right-5 {
+	  margin-right: 41.66666667%;
+	}
+	.col-lg-offset-right-4 {
+	  margin-right: 33.33333333%;
+	}
+	.col-lg-offset-right-3 {
+	  margin-right: 25%;
+	}
+	.col-lg-offset-right-2 {
+	  margin-right: 16.66666667%;
+	}
+	.col-lg-offset-right-1 {
+	  margin-right: 8.33333333%;
+	}
+	.col-lg-offset-right-0 {
+	  margin-right: 0;
+	}
+	}
+
+
+
+
+
+.container {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+
+.container-fluid {
+  width: 100%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+	/* custom bootstrap  */

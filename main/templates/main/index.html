@@ -1,0 +1,32 @@
+
+{% extends 'base.html' %}
+
+{% load i18n %}
+{% load static %}
+{% block content %}
+
+    <!-- Main logo  -->
+    <div class="mt-5 pt-3" style="text-align:center">
+      <img src="{% static 'main/images/logo.png' %}"  alt="">
+    </div>
+
+    <!-- The 4 main products items  -->
+    <div class="container  pb-1 pt-5  mr-auto ml-auto" id='circle-btn' style="text-align:center">
+            <div class="row mb-3" style="margin-right:0px;">
+
+                    {% for main in main_category %}
+                        {% if main.show_home == 'y' %}
+                            <div class="col-6 col-sm-3 mb-5">
+                                <li><a href="{% url 'productsubcategory_list' main.id %}" class="round red">
+                                     {{main.name_en|safe}}
+                                <span class="round">
+                                    {{main.cycle_inner_en}}
+                                </span></a></li>
+
+                            </div>
+                        {% endif %}
+                  {% endfor %}
+        </div>
+    </div>
+
+{% endblock content %}

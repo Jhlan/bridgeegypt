@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+{% load static %}
+{% block title %}Mechanical{% endblock title %}
+
+
+
+{% block content %}
+
+<style>
+    body{
+      background-color: #e0e0e0!important;
+    }
+  </style>
+<!-- Section: Products v.2 -->
+<section class="text-center container my-lg-2" style="padding-top:50px;">
+
+
+<div class="row">
+  <div class="col-12 col-md-1"></div>
+  <div class="col-12 col-md-10">
+    <div class="container" style="min-height:500px; position: relative;">
+
+      <!-- Section heading -->
+             <h2 class="h1-responsive font-weight-bold text-center text-dark mb-5 mt-5 my-4 ">{{ data_inner.0.name_en }}</h2>
+             <!-- Section description -->
+
+             {% if data_inner.0.description_en %} <hr>
+             <h4 class="text-left blue-text">Who are Bridge Egypt Co. :</h4>
+             <p class="black-text h5 text-justify  mx-auto mb-5 mt-1">{{ data_inner.0.description_en}}</p>
+
+             {% endif %}
+             {% if data_inner.0.detail_en %} <hr>
+              <h4 class="text-left blue-text">More Details :</h4>
+
+              <div>
+                  {{ data_inner.0.detail_en|safe }}
+              </div>
+             {% endif %}
+         </div>
+
+         <!-- <hr> -->
+         <!-- <button href='' class="btn btn-indigo" >Go Back</button> -->
+  </div>
+  <div class="col-12 col-md-1"></div>
+
+
+</div>
+    <!-- Grid row -->
+
+    <!-- Grid row -->
+
+</section>
+  <!-- Section: Products v.2 -->
+
+
+{% endblock content %}
+
+{% block slider %}
+{% endblock %}

@@ -1,0 +1,84 @@
+    <!--Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-color  fixed-top navbar-expand-md white double-nav scrolling-navbar ">
+
+        <!-- Navbar brand -->
+        <a class="navbar-brand" href="{% url 'index' %}">Bridge Egypt Co.</a>
+
+        <!-- Collapse button -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#basicExampleNav"
+          aria-controls="basicExampleNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav  main-menu ml-auto text-center">
+            <li class="nav-item mr-auto ">
+              <!-- Search form -->
+              <form class="search" method="GET" action="{% url 'search' %}">
+                <div class="row">
+                  <div class="col-10">
+                      <input name='q' value="{{ request.GET.q }}" class="form-control form-control-sm mr-3 w-10" type="text" placeholder="Search..." aria-label="Search">
+                  </div>
+                  <div class="col-2">
+
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                  </div>
+                </div>
+              </form>
+            </li>
+          </ul>
+
+          <ul class="navbar-nav  main-menu ml-auto  ">
+            <li class="nav-item menu-item  mr-auto align-items-sm-center">
+              <a class="nav-link " href="#"> Arabic </a>
+            </li>
+          </ul>
+
+        </div>
+
+
+
+        <!-- Collapsible content -->
+        <div class="collapse navbar-collapse float-right" id="basicExampleNav">
+
+          <!-- Links -->
+          <ul class="navbar-nav ml-auto  main-menu">
+            <li class="nav-item active menu-item">
+              <a class="nav-link" href="{% url 'index' %}">Home
+                <span class="sr-only">(current)</span>
+              </a>
+            </li>
+
+            <!-- Dropdown -->
+            <li class="nav-item dropdown menu-item">
+                <a class="nav-link dropdown-toggle" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                  aria-expanded="false">Our Porducts</a>
+                <div class="dropdown-menu  dropdown-primary" aria-labelledby="navbarDropdownMenuLink">
+                  {% for main in main_category %}
+                    {% if main.show_menu == 'y' %}
+                      <a class="dropdown-item bg-success text-dark" href="{% url 'productsubcategory_list' main.id %}">
+                        {{main.name_en|striptags}}</a>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              </li>
+
+
+            <li class="nav-item menu-item">
+              <a class="nav-link" href="{% url 'contact' %}">Contact Us</a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'about' %}">About Us</a>
+            </li>
+
+          </ul>
+
+        </div>
+        <!-- Collapsible content -->
+
+      </nav>
+    <!--/.Navbar-->

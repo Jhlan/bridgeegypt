@@ -1,0 +1,116 @@
+from django.db import models
+from django.template.defaultfilters import slugify
+from django.utils.translation import ugettext_lazy as _
+from ckeditor.fields import RichTextField
+from ckeditor_uploader.fields import RichTextUploadingField
+
+# Building Model
+class Building(models.Model):
+    name_ar=models.CharField(_('arabic name'),max_length=50,help_text=_("Product Name in Arabic"))
+    name_en=models.CharField(_('english name'),max_length=50,help_text=_("Product Name in English"),blank=True)
+
+    description_ar=models.TextField(_('description in arabic'),max_length=200,help_text=_("Product Description in Arabic"))
+    description_en=models.TextField(_('description in english'),max_length=200,help_text=_("Product Description in English"),blank=True)
+
+    detail_ar=RichTextUploadingField(_('detail in arabic'),help_text=_("Product Detail in Arabic"),blank=True)
+    detail_en=RichTextUploadingField(_('detail in english'),help_text=_("Product Detail in English"),blank=True)
+
+    material_ar=models.CharField(_('material in arabic'),max_length=50,help_text=_("Material in Arabic"),blank=True)
+    material_en=models.CharField(_('material in english'),max_length=50,help_text=_("Material in English"),blank=True)
+
+    keywords_ar=models.TextField(_('keywords in arabic'),max_length=1000,help_text=_("Product keywords in Arabic"),blank=True)
+    keywords_en=models.TextField(_('keywords in english'),max_length=1000,help_text=_("Product keywords in English"),blank=True)
+
+    length= models.FloatField(_('length'),help_text=_('Product Length'), null=True, blank=True)
+    width = models.FloatField(_('width'),help_text=_('Product Width'), null=True, blank=True)
+    height= models.FloatField(_('height'),help_text=_('Product Height'), null=True, blank=True)
+    weight= models.FloatField(_('weight'),help_text=_('Product Weight'), null=True, blank=True)
+    thickness= models.FloatField(_('thickness'),help_text=_('Product Thickness'), null=True, blank=True)
+    density= models.FloatField(_('density'),help_text=_('Product Density'), null=True, blank=True)
+    ref=models.CharField(_('product code'),max_length=50,help_text=_("Product Code"),blank=True)
+    photo = models.ImageField(upload_to='products/building',null=True, blank=True)
+
+    class Meta:
+        verbose_name='Building product'
+        verbose_name_plural='Building products'
+
+    def __str__(self):
+        return f'{self.name_en}, {self.name_ar}'
+
+# Building Category Model
+class BuildingCategory(models.Model):
+    type_ar=models.CharField(_('type in arabic'),max_length=100,blank=True)
+    description_ar=models.TextField(_('arabic description'),max_length=1000,blank=True)
+
+    type_en=models.CharField(_('type in english'),max_length=100,blank=True)
+    description_en=models.TextField(_('english description'),max_length=1000,blank=True)
+
+
+# Anchor Model
+class Anchor(models.Model):
+    name_ar=models.CharField(_('arabic name'),max_length=50,help_text=_("Product Name in Arabic"))
+    description_ar=models.CharField(_('arabic description'),max_length=200,help_text=_("Product Description in Arabic"))
+    detail_ar=models.TextField(_('arabic detail'),max_length=1000,help_text=_("Product Detail in Arabic"),blank=True)
+    material_ar=models.CharField(_('material in english'),max_length=50,help_text=_("Material in Arabic"),blank=True)
+    keywords_ar=models.TextField(_('arabic keywords'),max_length=1000,help_text=_("Product keywords in Arabic"),blank=True)
+
+    name_en=models.CharField(_('english name'),max_length=50,help_text=_("Product Name in English"),blank=True)
+    description_en=models.CharField(_('english description'),max_length=200,help_text=_("Product Description in English"),blank=True)
+    detail_en=models.TextField(_('english detail'),max_length=1000,help_text=_("Product Detail in English"),blank=True)
+    material_en=models.CharField(_('material in english'),max_length=50,help_text=_("Material in English"),blank=True)
+    keywords_en=models.TextField(_('english keywords'),max_length=1000,help_text=_("Product keywords in English"),blank=True)
+
+    length= models.FloatField(_('length'),help_text=_('Product Length'), null=True, blank=True)
+    width = models.FloatField(_('width'),help_text=_('Product Width'), null=True, blank=True)
+    height= models.FloatField(_('height'),help_text=_('Product Height'), null=True, blank=True)
+    weight= models.FloatField(_('weight'),help_text=_('Product Weight'), null=True, blank=True)
+    thickness= models.FloatField(_('thickness'),help_text=_('Product Thickness'), null=True, blank=True)
+    density= models.FloatField(_('density'),help_text=_('Product Density'), null=True, blank=True)
+    ref=models.CharField(_('code'),max_length=50,help_text=_("Product Code"),blank=True)
+
+    photo = models.ImageField(upload_to='products/anchors')
+
+# Anchor Category Model
+class AnchorCategory(models.Model):
+    type_ar=models.CharField(_('type in arabic'),max_length=100,blank=True)
+    description_ar=models.TextField(_('arabic description'),max_length=1000,blank=True)
+
+    type_en=models.CharField(_('type in english'),max_length=100,blank=True)
+    description_en=models.TextField(_('english description'),max_length=1000,blank=True)
+
+
+
+
+# Gas_and_powder Model
+class Gas_powder(models.Model):
+    name_ar=models.CharField(_('arabic name'),max_length=50,help_text=_("Product Name in Arabic"))
+    description_ar=models.CharField(_('arabic description'),max_length=200,help_text=_("Product Description in Arabic"))
+    detail_ar=models.TextField(_('arabic detail'),max_length=1000,help_text=_("Product Detail in Arabic"),blank=True)
+    material_ar=models.CharField(_('material in english'),max_length=50,help_text=_("Material in Arabic"),blank=True)
+    keywords_ar=models.TextField(_('arabic keywords'),max_length=1000,help_text=_("Product keywords in Arabic"),blank=True)
+
+    name_en=models.CharField(_('english name'),max_length=50,help_text=_("Product Name in English"),blank=True)
+    description_en=models.CharField(_('english description'),max_length=200,help_text=_("Product Description in English"),blank=True)
+    detail_en=models.TextField(_('english detail'),max_length=1000,help_text=_("Product Detail in English"),blank=True)
+    material_en=models.CharField(_('material in english'),max_length=50,help_text=_("Material in English"),blank=True)
+    keywords_en=models.TextField(_('english keywords'),max_length=1000,help_text=_("Product keywords in English"),blank=True)
+
+    length= models.FloatField(_('length'),help_text=_('Product Length'), null=True, blank=True)
+    width = models.FloatField(_('width'),help_text=_('Product Width'), null=True, blank=True)
+    height= models.FloatField(_('height'),help_text=_('Product Height'), null=True, blank=True)
+    weight= models.FloatField(_('weight'),help_text=_('Product Weight'), null=True, blank=True)
+    thickness= models.FloatField(_('thickness'),help_text=_('Product Thickness'), null=True, blank=True)
+    density= models.FloatField(_('density'),help_text=_('Product Density'), null=True, blank=True)
+    ref=models.CharField(_('code'),max_length=50,help_text=_("Product Code"),blank=True)
+
+    photo = models.ImageField(upload_to='products/gas_powder')
+
+
+# Gas_and_powder Category Model
+class Gas_powderCategory(models.Model):
+    type_ar=models.CharField(_('type in arabic'),max_length=100,blank=True)
+    description_ar=models.TextField(_('arabic description'),max_length=1000,blank=True)
+
+    type_en=models.CharField(_('type in english'),max_length=100,blank=True)
+    description_en=models.TextField(_('english description'),max_length=1000,blank=True)
+

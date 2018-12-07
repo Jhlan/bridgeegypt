@@ -1,0 +1,60 @@
+{% extends 'products/products_base.html' %}
+
+{% load static %}
+{% block title %}Mechanical{% endblock title %}
+
+
+
+{% block product %}
+
+<style>
+    body{
+      background-color: #e0e0e0!important;
+    }
+  </style>
+<!-- Section: Products v.2 -->
+<section class="text-center container my-lg-2" style="padding-top:50px;">
+
+
+<div class="row">
+  <div class="col-12 col-md-1"></div>
+  <div class="col-12 col-md-10">
+    <div class="container" style="min-height:500px; position: relative;">
+
+      <!-- Section heading -->
+             <h2 class="h1-responsive font-weight-bold text-center text-dark mb-5 mt-5 my-4 ">{{ product.name_en}}</h2>
+             <!-- Section description -->
+
+             <div><img class="rounded shadow border border-dark mb-4" src="{{ product.photo.url }}" style="width:70%;" alt=""></div>
+             {% if product.description_en %} <hr>
+             <h4 class="text-left blue-text">Product Description :</h4>
+             {% endif %}
+             <p class="black-text h5 text-justify  mx-auto mb-5 mt-1">{{ product.description_en}}</p>
+             {% if product.detail_en %} <hr>
+             <h4 class="text-left blue-text">More Details :</h4>
+             {% endif %}
+             <div>
+                 {{ product.detail_en|safe }}
+             </div>
+         </div>
+
+         <hr>
+
+         <a href="{% url 'product_list' product.sub_category.id %}" class="btn btn-indigo mt-5" >Go Back</a>
+  </div>
+  <div class="col-12 col-md-1"></div>
+
+
+</div>
+    <!-- Grid row -->
+
+    <!-- Grid row -->
+
+</section>
+  <!-- Section: Products v.2 -->
+
+
+{% endblock product %}
+
+{% block slider %}
+{% endblock %}

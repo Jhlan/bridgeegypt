@@ -1,0 +1,94 @@
+{% extends 'products/products_base.html' %}
+
+{% load static %}
+{% block title %}
+
+{% if search %}
+Search results
+{% else %}
+{{ object_list.0.category }}
+{% endif %}
+{% endblock title %}
+
+{% block product %}
+
+<!-- Section: Products v.2 -->
+<section class="text-center container my-lg-2" style="padding-top:50px; min-height:500px">
+        {% if object_list|length %}
+        {% else %}
+        <h2 class="text-white mt-5 pt-5">There are no products available.</h2>
+        {% endif %}
+
+    <!-- Section heading -->
+    {% if search %}
+    <h2 class="text-center text-white mt-5 mb-5">Search results</h2>
+    {% else %}
+    <h2 class="h1-responsive font-weight-bold text-center text-light mt-5 my-1 ">{{ object_list.0.category }}</h2>
+    <!-- Section description -->
+    <p class="grey-text text-center w-responsive mx-auto mb-5">{{ object_list.0.category.description_en }}</p>
+    {% endif %}
+    <!-- Grid row -->
+    <div class="row">
+      {% for product in object_list %}
+        <!-- Grid column -->
+        {% if product.show_home == 'y' %}
+            <div class="col-lg-4 col-md-4 col-sm-6 col-12  mb-4" >
+                <!-- Card -->
+                <div class="card card-cascade wider card-ecommerce" >
+                <!-- Card image -->
+                <div class="view view-cascade overlay">
+                        <img src="{{ product.photo.url }}" class="card-img-top"
+                    alt="sample photo">
+                    <a href="{{product.get_absolute_url}}">
+                    <div class="mask rgba-white-slight"></div>
+                    </a>
+                </div>
+                <!-- Card image -->
+                <!-- Card content -->
+                <div class="card-body card-body-cascade text-center">
+                    <!-- Category & Title -->
+                    <a href="" class="text-muted">
+                    <h5>{{ product.main_category|safe }}</h5>
+                    </a>
+                    <h4 class="card-title">
+                    <strong>
+                        <a href="{{product.get_absolute_url}}">{{ product.name_en|truncatechars:20 }}</a>
+                    </strong>
+                    </h4>
+                    <!-- Description -->
+                    <p class="card-text text-justify" style="height:100px !important;">
+                        {{ product.description_en|truncatechars:155}}</p>
+                    <!-- Card footer -->
+                    <div class="card-footer px-1">
+
+                    <span class=" font-weight-bold">
+                        <a href="{{product.get_absolute_url}}" class="" data-toggle="tooltip" data-placement="top" title="Quick Look">
+                            <h5 class="d-inline text-primary ">Show More</h4>
+                        </a>
+                    </span>
+
+                    </div>
+                </div>
+                <!-- Card content -->
+                </div>
+                <!-- Card -->
+            </div>
+        {% endif %}
+        <!-- Grid column -->
+        {% endfor %}
+
+
+
+    </div>
+    <!-- Grid row -->
+    {% if object_list.0.sub_category %}
+    <a href="{% url 'productsubcategory_list' object_list.0.sub_category.main_category.id %}" class="btn btn-indigo mt-5" >Go Back</a>
+    {% endif %}
+</section>
+  <!-- Section: Products v.2 -->
+
+
+{% endblock product %}
+
+{% block slider %}
+{% endblock %}

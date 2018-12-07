@@ -1,0 +1,145 @@
+<!-- Footer -->
+<footer class="page-footer font-small stylish-color-dark pt-4">
+
+    <!-- Footer Links -->
+    <div class="container text-center text-md-left">
+
+      <!-- Grid row -->
+      <div class="row">
+
+
+        <!-- Grid column -->
+        <div class="col-md-2 mx-auto">
+
+            <!-- Links -->
+            <h6 class="font-weight-bold text-uppercase mt-3 mb-4">Main Pages</h6>
+
+            <ul class="list-unstyled">
+              <li>
+                <a href="{% url 'index' %}">Home</a>
+              </li>
+              <li>
+                <a href="#!">About Us</a>
+              </li>
+              <li>
+                  <a href="{% url 'contact' %}">Contact Us</a>
+              </li>
+              <li>
+                <a href="#!"></a>
+              </li>
+            </ul>
+
+          </div>
+          <!-- Grid column -->
+        <hr class="clearfix w-100 d-md-none">
+
+
+        {% for main in main_category %}
+          {% if main.show_footer == 'y' %}
+
+            <!-- Grid column -->
+              <div class="col-md-2 mx-auto">
+
+                <!-- Links -->
+                <h6 class="font-weight-bold text-uppercase mt-3 mb-4">
+
+                    {{ main.name_en|safe}}
+                </h6>
+
+                <ul class="list-unstyled">
+                  {% for sub in sub_category %}
+                    {% if sub.main_category.id == main.id %}
+                      {% if sub.show_footer == 'y' %}
+                          <li>
+                            <a href="{% url 'product_list' sub.id %}">{{sub.name_en}}</a>
+                          </li>
+                      {% endif %}
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+
+              </div>
+              <!-- Grid column -->
+              {% if  forloop.last is not True %}
+                <hr class="clearfix w-100 d-md-none">
+              {% endif %}
+            {% endif %}
+          {% endfor %}
+
+      </div>
+      <!-- Grid row -->
+
+
+
+    </div>
+    <!-- Footer Links -->
+
+    <hr>
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a class="btn-floating btn-fb mx-1">
+            <i class="fa fa-facebook"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a class="btn-floating btn-tw mx-1">
+            <i class="fa fa-youtube"> </i>
+          </a>
+        </li>
+
+
+      </ul>
+      <!-- Social buttons -->
+
+    <!-- Call to action -->
+    <ul class="list-unstyled list-inline text-center py-2">
+      <li class="list-inline-item">
+        <h5 class="mb-1">Contact Us</h5>
+      </li>
+      <li class="list-inline-item">
+        <a href="{% url 'contact' %}" class="btn btn-danger btn-rounded">Let's go!</a>
+      </li>
+    </ul>
+    <!-- Call to action -->
+
+    <hr>
+
+
+    <!-- Copyright -->
+    <div class="footer-copyright text-center py-3">© 2018 Copyright:
+      <a href="{% url 'index' %}"> Bridge Egypt Co.</a>
+      <br><br>
+      <a href="https://www.facebook.com/aliojhlan" target="_blank" data-toggle="tooltip" data-placement="right" title="Phone No. 00201028804600">
+         Developed by : Ali O. Jhlan </a>
+    <!-- Social buttons -->
+    <ul class="list-unstyled list-inline text-center">
+        <li class="list-inline-item">
+          <a href="https://www.facebook.com/aldomycom" target="_blank" class="btn-floating btn-fb mx-1">
+            <i class="fa fa-facebook"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://twitter.com/alialdomy" target="_blank" class="btn-floating btn-tw mx-1">
+            <i class="fa fa-twitter"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://www.youtube.com/channel/UCIzh47xK5g6sLjiKrJe8H8w" target="_blank" class="btn-floating btn-gplus mx-1">
+            <i class="fa fa-youtube"> </i>
+          </a>
+        </li>
+        <li class="list-inline-item">
+          <a href="https://www.linkedin.com/in/jhlan/" target="_blank" class="btn-floating btn-li mx-1">
+            <i class="fa fa-linkedin"> </i>
+          </a>
+        </li>
+
+      </ul>
+      <!-- Social buttons -->
+
+    </div>
+
+    <!-- Copyright -->
+
+</footer>

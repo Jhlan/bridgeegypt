@@ -1,0 +1,61 @@
+{% extends 'products/products_base.html' %}
+
+{% load static %}
+{% block title %}{{object_list.0.main_category.name_en|striptags}}{% endblock title %}
+
+{% block product %}
+
+<div class="container my-5" style="margin-top:110px !important; min-height:350px">
+
+    <!-- Section heading -->
+    <h2 class="h1-responsive font-weight-bold text-center text-light mt-5 my-1 ">{{object_list.0.main_category.name_en|safe}}</h2>
+    <!-- Section description -->
+    <p class="grey-text text-center w-responsive mx-auto mb-5">
+            {% if object_list.0.main_category.id is 4 %}
+            {% else %}
+            {{object_list.0.main_category.description_en}}
+            {% endif %}
+        </p>
+
+    {% if object_list|length %}
+    {% else %}
+    <h2 class="text-white text-center mt-5 pt-5">There are no Subcategory available.</h2>
+    {% endif %}
+
+    <div class="row">
+
+        {% if object_list.0.main_category.id is 4 %}
+            <h3 class="grey-text text-center w-responsive mx-auto mb-5">{{object_list.0.main_category.description_en}}</h3>
+            {% else %}
+                {% for category in object_list %}
+                    {% if category.show_home == 'y' %}
+                        <div class="col mb-4">
+                            <div class="card text-center">
+                                <div class="card-header">
+                                <h3>{{category.name_en}}</h3>
+                                </div>
+                                <div class="card-body">
+
+                                <a href="
+
+                                {% url 'product_list' category.id  %}
+
+
+                                " class="btn btn-primary"> <h6>Show All Products</h6> </a>
+                                </div>
+
+                            </div>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+        {% endif %}
+
+        </div>
+    </div>
+
+{% endblock product %}
+
+{% block pagination %}
+
+
+{% endblock %}
